@@ -16,7 +16,7 @@ Google::Search::Web.new do |search|
 	link = search.first.uri
 end
 #Download srt from subscene
-path = "C:/Users/souvik_d/Downloads"
+path = "#{Dir.home}/Downloads"
 doc = Nokogiri::HTML(open(link))
 subtitle_link = doc.at_css("#downloadButton")['href']
 subtitle_uri = "http://www.subscene.com#{subtitle_link}"
